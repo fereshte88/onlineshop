@@ -34,6 +34,7 @@ public class PersonAService {
         PersonA personA = PersonA.builder().firstName(personADto.getFirstName())
                                                     .lastName(personADto.getLastName())
                                                     .nationalCode(personADto.getNationalCode())
+                                                    .jobs(personADto.getJobs())
                                                     .createAt(new Date(System.currentTimeMillis()))
                                                     .build();
         return personARepository.save(personA);
@@ -53,6 +54,9 @@ public class PersonAService {
             if (personADto.getNationalCode() != null) {
                 editPersonA.setNationalCode(personADto.getNationalCode());
             }
+//            if (personADto.getJobs() != null) {
+//                editPersonA.setJobs(personADto.getJobs());
+//            }
             editPersonA.setUpdateAt(new Date(System.currentTimeMillis()));
             personARepository.save(editPersonA);
             return editPersonA;
