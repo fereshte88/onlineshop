@@ -8,37 +8,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "TB_PERSON_A")
+@Table(name = "TB_CUSTOMER")
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Getter
 @Setter
-public class PersonA  extends BasePerson<PersonA>{
-
-    @Column(name = "first_Name")
-    private String firstName;
-
-    @Column(name="last_Name")
-    private String lastName;
+public class Customer  extends BasePerson<Customer>{
 
     @Column(name="national_Code")
     private String nationalCode;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "personA")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "customer")
     private List<Job> jobs = new ArrayList<>();
 
     // Helper method to add job and maintain bidirectional relationship
     public void addJob(Job job) {
         jobs.add(job);
-        job.setPersonA(this);
+        job.setCustomer(this);
     }
 
     // Helper method to remove job and maintain bidirectional relationship
     public void removeJob(Job job) {
         jobs.remove(job);
-        job.setPersonA(null);
+        job.setCustomer(null);
     }
 
     // Helper method to set jobs and maintain bidirectional relationship

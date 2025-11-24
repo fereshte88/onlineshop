@@ -10,19 +10,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "TB_PERSON_B")
+@Table(name = "TB_SELLER")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class PersonB extends BasePerson<PersonB> {
+public class Seller extends BasePerson<Seller> {
 
-    @Column(name = "first_Name")
-    private String firstName;
 
-    @Column(name="last_Name")
-    private String lastName;
-
-    @Column(name="public_Number")
-    private String publicNumber;
+    @Column(name="seller_Number")
+    private String sellerNumber;
 }

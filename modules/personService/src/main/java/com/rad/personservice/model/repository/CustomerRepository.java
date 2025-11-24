@@ -1,10 +1,10 @@
 package com.rad.personservice.model.repository;
 
 
-import com.rad.personservice.model.entity.PersonD;
+import com.rad.personservice.model.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonDRepository extends JpaRepository<PersonD,Long> {
+public interface CustomerRepository extends JpaRepository<Customer,Long> {
 }

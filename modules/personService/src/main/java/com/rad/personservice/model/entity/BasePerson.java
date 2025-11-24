@@ -19,6 +19,13 @@ public class BasePerson<T> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+
+    @Column(name = "first_Name")
+    private String firstName;
+
+    @Column(name="last_Name")
+    private String lastName;
+
     @Column(name="CREATE_AT")
     private Date createAt;
 
